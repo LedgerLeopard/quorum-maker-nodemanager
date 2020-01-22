@@ -102,7 +102,7 @@ func main() {
 
 	router.PathPrefix("/contracts").Handler(http.StripPrefix("/contracts", http.FileServer(http.Dir("/root/quorum-maker/contracts"))))
 	router.PathPrefix("/geth").Handler(http.StripPrefix("/geth", http.FileServer(http.Dir("/home/node/qdata/gethLogs"))))
-	router.PathPrefix("/constellation").Handler(http.StripPrefix("/constellation", http.FileServer(http.Dir("/home/node/qdata/constellationLogs"))))
+	router.PathPrefix("/tessera").Handler(http.StripPrefix("/tessera", http.FileServer(http.Dir("/home/node/qdata/tesseraLogs"))))
 	router.PathPrefix("/").Handler(http.StripPrefix("/", NewFileServer("NodeManagerUI")))
 
 	log.Info(fmt.Sprintf("Node Manager listening on %s...", listenPort))
